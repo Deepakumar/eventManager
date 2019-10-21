@@ -29,4 +29,8 @@ export class EventThumbnailComponent implements OnInit {
     this.eventClick.emit('eventClicked');
   }
 
+  templateReferenceEventCalled() {
+    console.log('Template varaible event');
+  }
+
 }

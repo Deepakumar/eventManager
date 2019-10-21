@@ -22,4 +22,6 @@ export class  EventListComponent {
     handleEventClicked(data) {
         console.log(data);
     }
+
+
 }
