@@ -11,15 +11,21 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
             <div>
                 <span>Location: {{event.location.address}}</span>
                 <span>&nbsp;</span>
-                <span>{{event.location.city}}, {{event.location.country}}</span>
+                <span class="pad-left">{{event.location.city}}, {{event.location.country}}</span>
             </div>
             <button class="btn btn-primary" (click)="handleClickMe()">Click Me</button>
             </div>
-            `
+            `,
+            styles:[
+              `.pad-left: {margin-left: 10px}
+              .well div { color:#bbc;}
+              `
+            ]
 })
 export class EventThumbnailComponent implements OnInit {
   @Input() event: any;
   @Output() eventClick = new EventEmitter();
+  thumbnailComponentId = 'THUM124589632';
   constructor() { }
 
   ngOnInit() {

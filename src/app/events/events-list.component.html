@@ -2,5 +2,6 @@
   <h1>Upcoming Events</h1>
   <hr/>
     <app-event-thumbnail #thumbnail [event]="eventData" (eventClick)="handleEventClicked($event)"></app-event-thumbnail>
+    <p>ThumbnailComponentID {{thumbnail.thumbnailComponentId}}</p>
     <a (click)="thumbnail.templateReferenceEventCalled()" href='#'>Call Thumbnail</a>
 </div>
