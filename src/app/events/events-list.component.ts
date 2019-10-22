@@ -1,27 +1,25 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
+import { EventserviceService } from '../eventservice.service';
+import { ToastrService } from '../toastr.service';
 
 @Component({
-    selector: 'event-list',
+    selector: 'app-event-list',
     templateUrl: './events-list.component.html'
 })
-export class  EventListComponent {
-    eventData = {
-        id:1,
-        name:'Angular connect',
-        date: '9/26/2019',
-        time: '10:00 am',
-        price: 599.99,
-        imageUrl: '/assets/images/event4.jpg',
-        location: {
-            address: '1057 DT',
-            city: 'London',
-            country: 'England'
-        }
-    }
-
+export class  EventListComponent implements OnInit {
+  eventData: any;
     handleEventClicked(data) {
         console.log(data);
     }
 
+    constructor(private eventService: EventserviceService, private toastrService: ToastrService) {}
+
+ ngOnInit() {
+  this.eventData = this.eventService.getEvents();
+ }
+
+ handleThumbnailClick(eventName) {
+  this.toastrService.success(eventName);
+ }
 
 }
