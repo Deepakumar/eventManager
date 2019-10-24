@@ -16,8 +16,7 @@ export class  EventListComponent implements OnInit {
     constructor(private eventService: EventserviceService, private toastrService: ToastrService, private route: ActivatedRoute) {}
 
  ngOnInit() {
-   console.log(this.route.snapshot);
-    this.eventData =this.route.snapshot.data['events'];
+    this.eventService.getEvents().subscribe(event=> {this.eventData = event});
  }
 
  handleThumbnailClick(eventName) {
