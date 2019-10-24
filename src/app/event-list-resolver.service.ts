@@ -12,14 +12,5 @@ export class EventListResolverService implements Resolve<any> {
 
   resolve() {
     return this.eventService.getEvents().pipe(map(events => events));
-    // let eventData:any;
-    //  let res=  this.eventService.getEvents();
-    //  this.eventService.getEvents().subscribe({
-    //   next: (v) => console.log(v)
-    // });
-    //  console.log(eventData);
-    //  return res;
-
-
   }
 }

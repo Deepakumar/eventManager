@@ -10,7 +10,7 @@ export class EventserviceService {
     setTimeout(()=>{
         subject.next(eventData);
         subject.complete
-    },1400);
+    },10);
     return subject;
   }
 
