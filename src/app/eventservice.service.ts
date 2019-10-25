@@ -7,10 +7,12 @@ import { Subject} from 'rxjs'
 export class EventserviceService {
   getEvents() {
     let subject = new Subject();
-    setTimeout(()=>{
+    // setTimeout(()=>{
+    //     subject.next(eventData);
+    //     subject.complete
+    // },10);
         subject.next(eventData);
         subject.complete
-    },10);
     return subject;
   }
 
