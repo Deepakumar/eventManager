@@ -14,5 +14,6 @@ export const appRouters: Routes = [
     {path: 'events/:id', component: EventDetailsComponent, canActivate: [EventRouteActivatorService]},
     {path: '404', component: Error404Component},
     {path: '', redirectTo: '/events', pathMatch: 'full'},
+    {path: 'user', loadChildren: './user/user.module#'}
     
 ]

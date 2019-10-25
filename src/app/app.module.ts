@@ -13,6 +13,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
 import { Error404Component } from './errors/error404/error404.component';
 import { EventRouteActivatorService } from './event-route-activator.service';
 import { EventListResolverService } from './event-list-resolver.service';
+import { ProfileComponent } from './user/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EventListResolverService } from './event-list-resolver.service';
     NavComponent,
     EventDetailsComponent,
     CreateEventComponent,
-    Error404Component
+    Error404Component,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
