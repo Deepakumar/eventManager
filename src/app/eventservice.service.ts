@@ -8,12 +8,10 @@ import { IEvent } from './shared/event.model';
 export class EventserviceService {
   getEvents(): Observable<IEvent[]> {
     let subject = new Subject<IEvent[]>();
-    // setTimeout(()=>{
-    //     subject.next(eventData);
-    //     subject.complete
-    // },10);
+    setTimeout(()=>{
         subject.next(eventData);
         subject.complete
+    },100);
     return subject;
   }
 

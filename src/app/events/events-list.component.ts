@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { EventserviceService } from '../eventservice.service';
 import { ToastrService } from '../toastr.service';
 import { ActivatedRoute } from '@angular/router';
+import { IEvent } from '../shared/event.model';
 
 @Component({
     selector: 'app-event-list',
     templateUrl: './events-list.component.html'
 })
 export class  EventListComponent implements OnInit {
-  eventData: any;
+  eventData: IEvent;
     handleEventClicked(data) {
         console.log(data);
     }
