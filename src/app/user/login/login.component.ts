@@ -1,3 +1,6 @@
+import { Router } from '@angular/router';
+import { logging } from 'protractor';
+import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,13 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  mouseoverLogin: boolean;
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
 
   login(formValues) {
     console.dir(formValues);
+    this.authService.loginUser(formValues.userName, formValues.userName);
+    this.router.navigate(['events']);
+  }
+
+  cancel() {
+    this.router.navigate(['events']);
   }
 
 }
